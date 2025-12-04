@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pneumonia Detection System | Sharnbasva University Kalaburagi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="sharanabasappa-logo.png" type="image/x-icon">
+</head>
+<body>
+    <div class="demo-mode-badge" id="demo-mode-badge">Demo Mode</div>
+
+    <header>
+        <div class="logo-container">
+            <img src="sharanabasappa-logo.png" alt="University Logo" class="logo-img">
+            <h1 class="university-name">Sharnbasva University Kalaburagi</h1>
+            <h2>Artificial Intelligence and Data Science</h2>
+            <h1>AI Powerd Pneumonia Detection System</h1>
+            <h6>Uses the Chest X-ray to prediction</h6>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="upload-section" class="main-content">
+            <h2 class="upload-title">Upload a Chest X-ray Image</h2>
+            <p class="upload-description">
+                Upload a chest X-ray image to detect whether pneumonia is present or not. 
+                The AI system will analyze the image and provide a diagnostic prediction.
+            </p>
+            
+            <div id="drop-area">
+                <p>Drag and drop your X-ray image here</p>
+                <p>- or -</p>
+                <input type="file" id="file-input" accept=".jpg,.jpeg,.png" />
+                <button class="btn btn-upload" id="file-select-btn">Select Image</button>
+            </div>
+            
+            <div class="error-message" id="error-message"></div>
+            
+            <div id="preview-container">
+                <h3>Selected Image:</h3>
+                <img id="image-preview" src="" alt="Preview of the selected X-ray image">
+                <div class="preview-info">
+                    <span class="file-name" id="file-name"></span>
+                    <button class="btn" id="analyze-btn">Analyze X-ray</button>
+                </div>
+            </div>
+            
+            <div class="loading-indicator" id="loading-indicator">
+                <div class="spinner"></div>
+                <p>Analyzing your X-ray image...</p>
+                <p>This may take a few moments</p>
+            </div>
+        </div>
+        
+        <div id="results-section" class="results-section">
+            <h2 class="results-header">Analysis Results</h2>
+            
+            <div class="result-container">
+                <div class="result-image">
+                    <img id="result-image" src="" alt="Analyzed X-ray image">
+                </div>
+                
+                <div class="result-details">
+                    <div class="result-card">
+                        <div id="result-icon" class="result-icon">
+                            <!-- Icon will be inserted by JS -->
+                        </div>
+                        <div id="result-status" class="result-status">
+                            <!-- Result text will be inserted by JS -->
+                        </div>
+                        <div class="confidence-meter">
+                            <div id="confidence-fill" class="confidence-fill"></div>
+                        </div>
+                        <div id="confidence-value" class="confidence-value">
+                            <!-- Confidence value will be inserted by JS -->
+                        </div>
+                        <div id="confidence-text" class="confidence">
+                            <!-- Confidence text will be inserted by JS -->
+                        </div>
+                        <div class="disclaimer">
+                            <strong>Disclaimer:</strong> This is an automated analysis and should be used for informational purposes only. 
+                            Always consult with a healthcare professional for proper diagnosis and treatment.
+                        </div>
+                        <button class="btn try-again-btn" id="try-again-btn">Analyze Another X-ray</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Pneumonia Detection System | Sharnbasva University. This is a demonstration application and not intended for clinical use.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
